@@ -83,6 +83,8 @@ const Transact = () => {
                 value={transactData.walletId}
                 onChange={handleChange}
                 name="walletId"
+                autoComplete="off"
+                
               />
               {errors.walletId && (
                 <p className="text-red-500 text-sm mt-1">{errors.walletId}</p>

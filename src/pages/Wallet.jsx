@@ -16,8 +16,7 @@ const Wallet = () => {
     const handleTransactions = async () => {
       try {
         const getTransactions = await fetchTransactions(user.walletId);
-        console.log("getTransactions", getTransactions);
-        setTransactions(getTransactions);
+         setTransactions(getTransactions);
       } catch (error) {
         console.log("Error in fetching Transaction", error);
       }

@@ -1,8 +1,6 @@
 import {
   addDoc,
   collection,
-  doc,
-  getDoc,
   getDocs,
   query,
   updateDoc,
@@ -62,18 +60,6 @@ export const handleTransaction = async (
 
     const senderDoc = senderQuerySnapshot.docs[0];
     const senderData = senderDoc.data();
-    const updatedSenderBalance = senderData.balance - amount;
-    const senderTransactionData = {
-      receiverId: receiverWalletId,
-      amount: -amount,
-      timestamp: new Date(),
-    };
-
-    const senderTransactions = senderData.transactions || [];
-    await updateDoc(senderDoc.ref, {
-      balance: updatedSenderBalance,
-      transactions: [...senderTransactions, senderTransactionData],
-    });
 
     const receiverQuery = query(
       collection(db, "users"),
@@ -85,18 +71,31 @@ export const handleTransaction = async (
       throw new Error("Receiver not found");
     }
 
+    const senderTransactionData = {
+      receiverId: receiverWalletId,
+      sent: -amount,
+      timestamp: new Date(),
+      newBalance: senderData.balance - amount,
+    };
+
+    const senderTransactions = senderData.transactions || [];
+    await updateDoc(senderDoc.ref, {
+      balance: senderData.balance - amount,
+      transactions: [...senderTransactions, senderTransactionData],
+    });
+
     const receiverDoc = receiverQuerySnapshot.docs[0];
     const receiverData = receiverDoc.data();
-    const updatedReceiverBalance = receiverData.balance + parseInt(amount);
     const receiverTransactionData = {
       senderId: senderWalletId,
-      amount: amount,
+      received: amount,
       timestamp: new Date(),
+      newBalance: receiverData.balance + parseInt(amount),
     };
 
     const receiverTransactions = receiverData.transactions || [];
     await updateDoc(receiverDoc.ref, {
-      balance: updatedReceiverBalance,
+      balance: receiverData.balance + parseInt(amount),
       transactions: [...receiverTransactions, receiverTransactionData],
     });
 
