@@ -27,7 +27,9 @@ const Navbar = () => {
       >
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">SharpeDefi</span>
+            <span className="sr-only">
+              SharpeDefi 
+            </span>
             <img
               className="h-8 w-auto rounded-full"
               src="https://framerusercontent.com/images/pDyVPAanzfYpfZFNjTiMP2nAQU.svg"

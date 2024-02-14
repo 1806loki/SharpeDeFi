@@ -26,7 +26,7 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
-              Welcome to SharpeFi Your Gateway to DeFi Innovation
+              Welcome to SharpeFi Your Gateway to DeFi Innovation  
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
