@@ -37,7 +37,7 @@ Install my-project with npm
 
 ```bash
  git clone https://github.com/1806loki/SharpeDeFi.git
-  cd SharpeDeFi
+ cd SharpeDeFi
 ```
 ```bash
  npm install
@@ -45,7 +45,7 @@ Install my-project with npm
 ```
 
 ## Usage
-The project can be run locally using ` npm run devt`. Access the application in a web browser at `localhost:5173`.
+The project can be run locally using ` npm run dev`. Access the application in a web browser at `localhost:5173`.
 
 ## Roadmap
 
@@ -71,7 +71,8 @@ No acknowledgments at this time.
 
 
 
-![Screenshot 2024-02-15 130208](https://github.com/1806loki/SharpeDeFi/assets/127595726/c35a417f-d2fd-459f-852a-3362e3eb14f8)
+![Screenshot 2024-02-15 130208![Screenshot 2024-02-15 130156](https://github.com/1806loki/SharpeDeFi/assets/127595726/1d5a9f68-eb41-409f-9f1c-7c2b0d8fa6ad)
+](https://github.com/1806loki/SharpeDeFi/assets/127595726/c35a417f-d2fd-459f-852a-3362e3eb14f8)
 
 
 
